@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/ec2-user/node-projects/on-my-way/TestServer
+sudo cd /home/ec2-user/node-projects/on-my-way/TestServer
 sudo git pull
-npm install --production
+sudo npm install --production
 sudo forever restartall
