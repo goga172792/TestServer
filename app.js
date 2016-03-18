@@ -12,7 +12,7 @@ var photos       =    ["https://upload.wikimedia.org/wikipedia/commons/6/65/Krus
                        "http://zblogged.com/wp-content/uploads/2015/11/5.png",
                        "http://zblogged.com/wp-content/uploads/2015/11/17.jpg"];
 
-var firstNames   =    ["Dorla", "Carlyn", "Jude","Suk","Sherrill","Alycia","Shaquita","Luigi","Kennith","Sanora"];
+var firstNames   =    ["Heriknaz", "Carlyn", "Jude","Suk","Sherrill","Alycia","Shaquita","Luigi","Kennith","Sanora"];
 var lastNames    =    ["Clark","Coleman","Hart","McGrath","Watson","Peters","McDonald","Hardacre","Terry","Duncan"];
 var transports   =    ["bus", "plane", "ship", "car", "train"];
 var cities       =    ["119 Baxter St New York, NY 10013 USA", "AK-2 Manley Hot Springs, AK 99756 USA", "Flygplatsvägen, 904 22 Umeå, Sweden",
