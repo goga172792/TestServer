@@ -15,9 +15,8 @@ var photos       =    ["https://upload.wikimedia.org/wikipedia/commons/6/65/Krus
 var firstNames   =    ["Dorla", "Carlyn", "Jude","Suk","Sherrill","Alycia","Shaquita","Luigi","Kennith","Sanora"];
 var lastNames    =    ["Clark","Coleman","Hart","McGrath","Watson","Peters","McDonald","Hardacre","Terry","Duncan"];
 var transports   =    ["bus", "plane", "ship", "car", "train"];
-var cities       =    ["119 Baxter St New York, NY 10013 USA", "AK-2 Manley Hot Springs, AK 99756 USA", "Flygplatsvägen, 904 22 Umeå, Sweden",
-                       "Nikitsky Blvd, 5с1, Moscow, Russia, 119019", "Iliyas Zhansugiruly St 8/1, Astana, Kazakhstan",
-                       "27 Mnatobi St, Tbilisi, Georgia", "9 Madoyan Street, Yerevan 0006, Armenia"];
+var cities       =    ["NYC, New York, NY, USA", "MOW, Moscow, Russia", "IEV, Kiev, Ukraine", "LAX, Los Angeles, CA, USA", "OPO, Porto, Portugal"];
+
 
 var currency     =    ["dollar", "euro", "ruble", "pound"];
 var phoneNumbers =   ["(811) 609-8411",
@@ -136,7 +135,7 @@ function genTrip(){
 
 function genLocationInfo(){
 
-  return {"city": cities[getRandomInt(0,6)], "time": getCurrentDateInMill};
+  return {"city": cities[getRandomInt(0,6)], "time": getCurrentDateInMill()};
 }
 
 function genRating(){
