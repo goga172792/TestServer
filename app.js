@@ -1,4 +1,5 @@
 var express = require('./node_modules/express');
+var https = require('https');
 var app = express();
 var loremIpsum   = require('lorem-ipsum'),
     output       = loremIpsum();
@@ -45,6 +46,35 @@ app.get("/profile", function (req, res) {
     var profile = {"profile" : genProfileWithReviews()};
     res.send(profile);
 });
+
+
+app.get("/getCountryInfo", function (req, res) {
+
+    var options = {
+        host :  'restcountries.eu',
+        port : 443,
+        path : '/rest/v1/name/' + req.query.country,
+        method : 'GET'
+    }
+
+    getCall(options, function(response) {
+        response.on('data', function (data) {
+            var obj = {"countryInfo" : JSON.parse(data)[0]};
+            console.log(obj)
+            res.send(obj);
+        });
+    });
+});
+
+function getCall(opt, callback) {
+
+    var getReq = https.request(opt, callback);
+
+    getReq.end();
+    getReq.on('error', function(err){
+        console.log(err);
+    });
+}
 
 
 function getRandomFloat(min, max){
@@ -135,7 +165,7 @@ function genTrip(){
 
 function genLocationInfo(){
 
-  return {"city": cities[getRandomInt(0,6)], "time": getCurrentDateInMill()};
+  return {"city": cities[getRandomInt(0,4)], "time": getCurrentDateInMill()};
 }
 
 function genRating(){
@@ -206,25 +236,6 @@ function genText(){
 app.listen(3000,function(){
   console.log("server is running");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
